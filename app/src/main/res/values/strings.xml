@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">lab6</string>
+    <string-array name="Color_1">
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Black</item>
+        <item>Red</item>
+        <item>Purple</item>
+        <item>Cyan</item>
+    </string-array>
+
+    <string-array name="Color_2">
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Black</item>
+        <item>Red</item>
+        <item>Purple</item>
+        <item>Cyan</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
