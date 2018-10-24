@@ -45,13 +45,19 @@ public class DetailFragment extends Fragment {
         // Inflate the layout for this fragment
         Log.d("my", "5");
         View v = inflater.inflate(R.layout.fragment_detail, container, false);
-
         qwe = v.findViewById(R.id.detaillayout);
-        qwe.setBackgroundColor(Color.parseColor(color));
-
-
-
+        /*qwe = v.findViewById(R.id.detaillayout);
+        qwe.setBackgroundColor(Color.parseColor(color));*/
+        changecolor(color);
         return v;
+    }
+
+    public void changecolorname(String color) {
+        changecolor(color);
+    }
+
+    public void changecolor(String color){
+        qwe.setBackgroundColor(Color.parseColor(color));
     }
 
 }
