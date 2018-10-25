@@ -25,9 +25,9 @@ public class DetailFragment extends Fragment {
     public static DetailFragment newInstance(String color) {
         Log.d("my", "3");
         DetailFragment df = new DetailFragment();
-        Bundle bundle = new Bundle();
+        /*Bundle bundle = new Bundle();
         bundle.putString(COLOR_KEY, color);
-        df.setArguments(bundle);
+        df.setArguments(bundle);*/
         return df;
     }
 
@@ -35,8 +35,8 @@ public class DetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("my", "4");
-        if (getArguments() != null)
-            color = getArguments().getString(COLOR_KEY);
+        /*if (getArguments() != null)
+            color = getArguments().getString(COLOR_KEY);*/
     }
 
     @Override
@@ -46,8 +46,9 @@ public class DetailFragment extends Fragment {
         Log.d("my", "5");
         View v = inflater.inflate(R.layout.fragment_detail, container, false);
         qwe = v.findViewById(R.id.detaillayout);
-        /*qwe = v.findViewById(R.id.detaillayout);
-        qwe.setBackgroundColor(Color.parseColor(color));*/
+        if (getArguments() != null)
+            color = getArguments().getString(COLOR_KEY);
+        Log.d("my", "9");
         changecolor(color);
         return v;
     }

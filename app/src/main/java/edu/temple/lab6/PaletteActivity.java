@@ -9,6 +9,7 @@ import android.util.Log;
 public class PaletteActivity extends Activity implements CanvasFragment.GetColorInterface {
     DetailFragment df;
     FragmentManager fm;
+    public static final String COLOR_KEY = "color_name";
 
     boolean singlePane;
 
@@ -16,11 +17,6 @@ public class PaletteActivity extends Activity implements CanvasFragment.GetColor
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        String colorMessage;
-
-
-        Log.d("my", "6");
         singlePane = findViewById(R.id.Container_2) == null;
         df = new DetailFragment();
 
@@ -38,15 +34,19 @@ public class PaletteActivity extends Activity implements CanvasFragment.GetColor
 
     }
 
-    public void colorSelected(String color){
+    public void colorSelected(String selectedColor){
         if(singlePane){
-            DetailFragment newFragment = DetailFragment.newInstance(color);
+            Log.d("my", "6");
+            DetailFragment newFragment = DetailFragment.newInstance(selectedColor);
+            Bundle bundle = new Bundle();
+            bundle.putString(COLOR_KEY, "red");
+            newFragment.setArguments(bundle);
             fm.beginTransaction()
                     .replace(R.id.Container_1, newFragment)
                     .addToBackStack(null)
                     .commit();
         }else{
-            df.changecolorname(color);
+            df.changecolorname(selectedColor);
         }
 
     }
