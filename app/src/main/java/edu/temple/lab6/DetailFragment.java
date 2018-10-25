@@ -15,14 +15,14 @@ import android.view.ViewGroup;
  */
 public class DetailFragment extends Fragment {
     View qwe;
-    String color = "";
+    String color;
     public static final String COLOR_KEY = "color_name";
 
     public DetailFragment() {
         // Required empty public constructor
     }
 
-    public static DetailFragment newInstance(String color) {
+    public static DetailFragment newInstance() {
         Log.d("my", "3");
         DetailFragment df = new DetailFragment();
         /*Bundle bundle = new Bundle();
@@ -46,10 +46,14 @@ public class DetailFragment extends Fragment {
         Log.d("my", "5");
         View v = inflater.inflate(R.layout.fragment_detail, container, false);
         qwe = v.findViewById(R.id.detaillayout);
-        if (getArguments() != null)
+        if (getArguments() != null) {
             color = getArguments().getString(COLOR_KEY);
-        Log.d("my", "9");
-        changecolor(color);
+            changecolor(color);
+        }
+
+
+        Log.d("my", color);
+        //changecolor(color);
         return v;
     }
 

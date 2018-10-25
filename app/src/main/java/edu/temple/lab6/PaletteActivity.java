@@ -36,13 +36,13 @@ public class PaletteActivity extends Activity implements CanvasFragment.GetColor
 
     public void colorSelected(String selectedColor){
         if(singlePane){
-            Log.d("my", "6");
-            DetailFragment newFragment = DetailFragment.newInstance(selectedColor);
+            Log.d("my", selectedColor);
+            //DetailFragment newFragment = DetailFragment.newInstance();
             Bundle bundle = new Bundle();
-            bundle.putString(COLOR_KEY, "red");
-            newFragment.setArguments(bundle);
+            bundle.putString(COLOR_KEY, selectedColor);
+            df.setArguments(bundle);
             fm.beginTransaction()
-                    .replace(R.id.Container_1, newFragment)
+                    .replace(R.id.Container_1, df)
                     .addToBackStack(null)
                     .commit();
         }else{

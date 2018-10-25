@@ -10,13 +10,7 @@
     <FrameLayout
         android:id="@+id/Container_1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".4"/>
+        android:layout_height="match_parent" />
 
-    <FrameLayout
-        android:id="@+id/Container_2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".6"/>
 
 </LinearLayout>
